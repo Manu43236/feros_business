@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, CheckCircle2 } from 'lucide-react'
+import { X, CheckCircle2, Loader2 } from 'lucide-react'
+import { demoRequestsApi } from '../../api'
 
 const INITIAL = { name: '', phone: '', company: '', email: '', fleetSize: '', city: '' }
 
@@ -13,13 +14,16 @@ export default function Modal({ open, onClose }) {
   const [form, setForm] = useState(INITIAL)
   const [errors, setErrors] = useState({})
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [apiError, setApiError] = useState('')
 
   const set = (field) => (e) => {
     setForm((f) => ({ ...f, [field]: e.target.value }))
     setErrors((err) => ({ ...err, [field]: false }))
+    setApiError('')
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const newErrors = {}
     if (!form.name.trim()) newErrors.name = true
     const phoneClean = form.phone.replace(/\s+/g, '')
@@ -27,8 +31,25 @@ export default function Modal({ open, onClose }) {
     if (!form.company.trim()) newErrors.company = true
     if (form.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) newErrors.email = true
     if (Object.keys(newErrors).length) { setErrors(newErrors); return }
-    setSubmitted(true)
-    setTimeout(onClose, 2600)
+
+    setLoading(true)
+    setApiError('')
+    try {
+      await demoRequestsApi.submit({
+        name: form.name.trim(),
+        phone: phoneClean,
+        company: form.company.trim(),
+        email: form.email.trim() || null,
+        fleetSize: form.fleetSize || null,
+        city: form.city.trim() || null,
+      })
+      setSubmitted(true)
+      setTimeout(onClose, 2600)
+    } catch {
+      setApiError('Something went wrong. Please call us at +91-9988864964.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   useEffect(() => {
@@ -154,11 +175,15 @@ export default function Modal({ open, onClose }) {
                       </div>
                     </div>
 
+                    {apiError && (
+                      <p className="text-red-500 text-xs mb-3 text-center">{apiError}</p>
+                    )}
                     <button
                       onClick={handleSubmit}
-                      className="w-full bg-orange-500 hover:bg-orange-400 text-white font-bold py-3.5 rounded-xl text-base transition-all duration-200 hover:shadow-lg hover:shadow-orange-500/30"
+                      disabled={loading}
+                      className="w-full bg-orange-500 hover:bg-orange-400 disabled:opacity-60 disabled:cursor-not-allowed text-white font-bold py-3.5 rounded-xl text-base transition-all duration-200 hover:shadow-lg hover:shadow-orange-500/30 flex items-center justify-center gap-2"
                     >
-                      Submit Request →
+                      {loading ? <><Loader2 size={16} className="animate-spin" /> Submitting…</> : 'Submit Request →'}
                     </button>
                   </motion.div>
                 ) : (
