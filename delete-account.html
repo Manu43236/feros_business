@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delete Account — FEROS</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      line-height: 1.7;
+    }
+    header {
+      background: #1E3A5F;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+    }
+    header img { height: 36px; }
+
+    .hero {
+      background: linear-gradient(135deg, #1E3A5F 0%, #0F2137 100%);
+      padding: 48px 24px;
+      text-align: center;
+    }
+    .hero h1 { font-size: 28px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .hero p { color: rgba(255,255,255,0.7); font-size: 15px; }
+
+    main {
+      max-width: 680px;
+      margin: 40px auto;
+      padding: 0 24px 80px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      padding: 28px 32px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #1E3A5F;
+      margin-bottom: 14px;
+    }
+
+    p { font-size: 15px; color: #334155; margin-bottom: 10px; }
+    p:last-child { margin-bottom: 0; }
+
+    ol, ul { margin: 8px 0 10px 20px; font-size: 15px; color: #334155; }
+    li { margin-bottom: 6px; }
+
+    .warning {
+      background: #fff7ed;
+      border-left: 4px solid #F97316;
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin: 14px 0;
+      font-size: 14px;
+      color: #7c2d12;
+    }
+
+    .contact-box {
+      background: #1E3A5F;
+      color: #fff;
+      border-radius: 12px;
+      padding: 24px 28px;
+    }
+    .contact-box h3 { font-size: 15px; font-weight: 700; margin-bottom: 10px; }
+    .contact-box p { color: rgba(255,255,255,0.8); font-size: 14px; margin-bottom: 6px; }
+    .contact-box a { color: #F97316; text-decoration: none; }
+
+    footer {
+      background: #0F2137;
+      text-align: center;
+      padding: 20px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="FEROS" />
+  </header>
+
+  <div class="hero">
+    <h1>Account Deletion Request</h1>
+    <p>Fleet Equipment Rental Operating System</p>
+  </div>
+
+  <main>
+
+    <div class="card">
+      <h2>How to Request Account Deletion</h2>
+      <p>You can request deletion of your FEROS account and associated data by following the steps below. Account deletion requests are processed within <strong>7 business days</strong>.</p>
+
+      <div class="warning">
+        ⚠️ Account deletion is permanent. All your personal data, attendance records, and activity history will be permanently removed and cannot be recovered.
+      </div>
+
+      <ol>
+        <li>Send an email to <strong>privacy@feros.in</strong> from your registered phone number's associated email, or ask your company's FEROS administrator to submit the request on your behalf.</li>
+        <li>Use the subject line: <strong>"Account Deletion Request — [Your Name] — [Your Phone Number]"</strong></li>
+        <li>Include your full name, registered phone number, and company name in the email body.</li>
+        <li>Our team will verify your identity and process the deletion within 7 business days.</li>
+        <li>You will receive a confirmation email once your account has been deleted.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>What Data is Deleted</h2>
+      <ul>
+        <li>Your personal profile (name, phone number, PIN)</li>
+        <li>Your attendance records and location check-in history</li>
+        <li>Your payroll and payslip data</li>
+        <li>Your authentication tokens and device sessions</li>
+      </ul>
+
+      <h2 style="margin-top:18px;">What Data is Retained</h2>
+      <p>The following data may be retained for legal and operational compliance:</p>
+      <ul>
+        <li>Business transaction records (orders, LRs, invoices) that are part of your employer's legal records — retained as per Indian accounting regulations (typically 7 years)</li>
+        <li>Any data required by law to be retained</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Note for Company Administrators</h2>
+      <p>If you are a company administrator and wish to delete your entire tenant account and all associated data, please contact us directly. Upon subscription cancellation, all tenant data is automatically and permanently deleted after <strong>90 days</strong>.</p>
+    </div>
+
+    <div class="contact-box">
+      <h3>Contact Us</h3>
+      <p>Email: <a href="mailto:privacy@feros.in">privacy@feros.in</a></p>
+      <p>Website: <a href="https://feros.in" target="_blank">https://feros.in</a></p>
+      <p>Response time: within 7 business days</p>
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; 2026 FEROS. All rights reserved.
+  </footer>
+
+</body>
+</html>
