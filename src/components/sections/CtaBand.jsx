@@ -43,7 +43,7 @@ export default function CtaBand({ onDemoClick }) {
           </div>
 
           <p className="text-slate-600 text-sm mt-8">
-            No credit card required · Free onboarding session · Response within 24 hours
+            No credit card required · Free onboarding session · We reach you before your next truck hits the road
           </p>
         </motion.div>
       </div>

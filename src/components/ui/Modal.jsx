@@ -100,7 +100,7 @@ export default function Modal({ open, onClose }) {
                   <motion.div key="form" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
                     <h2 className="text-xl font-black text-slate-900 mb-1">Request a Free Demo</h2>
                     <p className="text-slate-500 text-sm mb-6">
-                      Fill in your details and we'll get back to you within 24 hours.
+                      Fill in your details — our team will reach you before your next truck hits the road.
                     </p>
 
                     <div className="grid grid-cols-2 gap-3 mb-3">
@@ -198,7 +198,7 @@ export default function Modal({ open, onClose }) {
                     <h3 className="text-xl font-black text-slate-900 mb-2">Request Received!</h3>
                     <p className="text-slate-500 text-sm leading-relaxed">
                       We've received your demo request.<br />
-                      Our team will contact you within <strong className="text-slate-700">24 hours</strong>.
+                      Our team will reach you before your next truck hits the road.
                     </p>
                   </motion.div>
                 )}

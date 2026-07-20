@@ -25,7 +25,7 @@ const FAQS = [
   },
   {
     q: 'Do you offer a free trial?',
-    a: 'We offer a free personalised demo where our team walks you through the platform with your actual use case and data. This gives you a much clearer picture than a generic free trial. Request a demo and we will schedule it within 24 hours.',
+    a: 'We offer a free personalised demo where our team walks you through the platform with your actual use case and data. This gives you a much clearer picture than a generic free trial. Request a demo and our team will reach you before your next truck hits the road.',
   },
 ]
 

@@ -4,6 +4,7 @@ import Hero from './components/hero/Hero'
 import TrustBand from './components/sections/TrustBand'
 import Stats from './components/sections/Stats'
 import Features from './components/sections/Features'
+import Clients from './components/sections/Clients'
 import StandaloneSection from './components/sections/StandaloneSection'
 import ForSection from './components/sections/ForSection'
 import HowItWorks from './components/sections/HowItWorks'
@@ -25,6 +26,7 @@ export default function App() {
         <Hero onDemoClick={openModal} />
         <TrustBand />
         <Stats />
+        <Clients />
         <Features />
         <StandaloneSection />
         <ForSection onDemoClick={openModal} />
